@@ -22,6 +22,13 @@ def pca(input):
     eigval_per = [(i/tot)*100 for i in sorted(eig_val,reverse=True)]
     cum_sum = np.cumsum(eigval_per)
 
+    #plotting
+    range_x = np.array([1,50,100])
+    fig = plt.figure()
+    ax = fig.add_subplot(1,1,1)
+    ax.plot(range_x,cum_sum)
+    fig.show()
+
     #finding the new reduced data matrix
     matrix_w = np.hstack((eig_pairs[0][1].reshape(3,1),eig_pairs[1][1].reshape(3,1)))
     y = input.dot(matrix_w)
