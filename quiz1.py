@@ -23,7 +23,7 @@ def pca(input):
     cum_sum = np.cumsum(eigval_per)
 
     #plotting
-    range_x = np.array([1,50,100])
+    range_x = np.array([1,2,3])
     fig = plt.figure()
     ax = fig.add_subplot(1,1,1)
     ax.plot(range_x,cum_sum)
